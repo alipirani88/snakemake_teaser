@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+fastqc_a_file        1              1              1
+total                1              1              1
+
+Select jobs to execute...
+
+[Wed Nov  3 16:00:20 2021]
+rule fastqc_a_file:
+    input: data/0Hour_001_1.fq.gz
+    output: data/0Hour_001_1_fastqc.html, data/0Hour_001_1_fastqc.zip
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Nov  3 16:00:26 2021]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/apirani/Session8_snakemake/.snakemake/log/2021-11-03T160019.809855.snakemake.log
