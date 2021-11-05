@@ -1,0 +1,62 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+all                  1              1              1
+fastqc_a_file        2              1              1
+run_multiqc          1              1              1
+total                4              1              1
+
+Select jobs to execute...
+
+[Thu Nov  4 21:18:22 2021]
+rule fastqc_a_file:
+    input: data/0Hour_001_1.fq.gz
+    output: data/0Hour_001_1_fastqc.html, data/0Hour_001_1_fastqc.zip
+    jobid: 1
+    wildcards: filename=data/0Hour_001_1
+    resources: tmpdir=/tmp
+
+[Thu Nov  4 21:18:27 2021]
+Finished job 1.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Thu Nov  4 21:18:27 2021]
+rule fastqc_a_file:
+    input: data/6Hour_001_1.fq.gz
+    output: data/6Hour_001_1_fastqc.html, data/6Hour_001_1_fastqc.zip
+    jobid: 2
+    wildcards: filename=data/6Hour_001_1
+    resources: tmpdir=/tmp
+
+[Thu Nov  4 21:18:33 2021]
+Finished job 2.
+2 of 4 steps (50%) done
+Select jobs to execute...
+
+[Thu Nov  4 21:18:33 2021]
+rule run_multiqc:
+    input: data/0Hour_001_1_fastqc.html, data/6Hour_001_1_fastqc.html
+    output: multiqc_report.html, multiqc_data
+    jobid: 3
+    resources: tmpdir=/tmp
+
+[Thu Nov  4 21:18:37 2021]
+Finished job 3.
+3 of 4 steps (75%) done
+Select jobs to execute...
+
+[Thu Nov  4 21:18:37 2021]
+localrule all:
+    input: data/0Hour_001_1_fastqc.html, data/6Hour_001_1_fastqc.html, multiqc_report.html
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Thu Nov  4 21:18:37 2021]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: /home/apirani/Session8_snakemake/.snakemake/log/2021-11-04T211821.900303.snakemake.log

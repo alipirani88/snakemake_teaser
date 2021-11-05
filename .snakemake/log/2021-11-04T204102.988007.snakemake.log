@@ -1,0 +1,12 @@
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules fastqc_a_file and fastqc_a_file2 are ambiguous for the file data/0Hour_001_1_fastqc.html.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	fastqc_a_file: filename=data/0Hour_001_1
+	fastqc_a_file2: filename=data/0Hour_001_1
+Expected input files:
+	fastqc_a_file: data/0Hour_001_1.fq.gz
+	fastqc_a_file2: data/0Hour_001_1.fq.gzExpected output files:
+	fastqc_a_file: data/0Hour_001_1_fastqc.html data/0Hour_001_1_fastqc.zip
+	fastqc_a_file2: data/0Hour_001_1_fastqc.html data/0Hour_001_1_fastqc.zip
